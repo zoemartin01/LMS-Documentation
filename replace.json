@@ -1,0 +1,8 @@
+{
+    "replace": [
+        {
+            "search": "Object",
+            "replace": "\\emph{Object}"
+        }
+    ]
+}
