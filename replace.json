@@ -12,6 +12,16 @@
         {
             "search": "subsection",
             "replace": "subsubsection"
+        },
+        {
+            "desc": "Color ROUTES in kit-green",
+            "search": "(GET|POST|DELETE|PATCH|PUT)",
+            "replace": "\\\\textcolor{kit-green}{\\1}"
+        },
+        {
+            "desc": "Color second column in kit-red",
+            "search": "(.*?& )(.*?)( &.*)",
+            "replace": "\\1\\\\textcolor{kit-red}{\\2}\\3"
         }
     ]
 }
