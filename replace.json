@@ -1,8 +1,17 @@
 {
-    "replace": [
+    "regex": [
         {
-            "search": "Object",
-            "replace": "\\emph{Object}"
+            "desc": "Remove class overview from docs",
+            "search": "\\\\hypertarget{classes}[\\s\\S]*?\\\\hypertarget",
+            "replace": "\\\\hypertarget"
+        },
+        {
+            "search": "subsubsection",
+            "replace": "paragraph"
+        },
+        {
+            "search": "subsection",
+            "replace": "subsubsection"
         }
     ]
 }
