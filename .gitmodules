@@ -1,0 +1,9 @@
+[submodule "backend"]
+	path = backend
+	url = git@git.scc.kit.edu:realpsege/pse-backend.git
+[submodule "frontend"]
+	path = frontend
+	url = git@git.scc.kit.edu:realpsege/pse-frontend.git
+[submodule "overleaf"]
+	path = overleaf
+	url = https://git.overleaf.com/61a397247e8cf845507eeb12
