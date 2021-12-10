@@ -22,6 +22,11 @@
             "desc": "Color second column in kit-red",
             "search": "(.*?& )(.*?)( &.*)",
             "replace": "\\1\\\\textcolor{kit-red}{\\2}\\3"
+        },
+        {
+            "desc": "Remove `Kind` from Controllers",
+            "search": "\\\\textbf{Kind}[\\s\\S]*?Controller}\\\\\\\\",
+            "replace": ""
         }
     ]
 }
