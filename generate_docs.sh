@@ -13,7 +13,7 @@ tsc -p backend/tsconfig.json &>/dev/null
 tsc -p frontend/tsconfig.json &>/dev/null
 
 echo "Generating Markdown Docs..."
-options=""
+options="-p list"
 jsdoc2md $options --files backend/dist/models/**/*.js > docs/md/models.backend.md
 jsdoc2md $options --files backend/dist/controllers/**/*.js > docs/md/controllers.backend.md
 jsdoc2md $options --files backend/dist/types/**/*.js > docs/md/types.backend.md
