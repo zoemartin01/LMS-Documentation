@@ -36,6 +36,13 @@
             "filename": "^controllers.*\\.tex$"
         },
         {
+            "desc": "replace global class with controller class in controllers",
+            "search": "(\\*\\*Kind\\*\\*: global class)",
+            "replace": "**Kind**: controller class",
+            "filename": "^controllers.*\\.md$",
+            "disabled": true
+        },
+        {
             "desc": "Remove class overview from docs",
             "search": "\\\\hypertarget{classes}[\\s\\S]*?\\\\hypertarget",
             "replace": "\\\\hypertarget",
