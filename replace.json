@@ -71,6 +71,12 @@
             "search": "\\\\textbf{Kind}: static method of[\\s\\S]+?Controller}\\\\\\\\",
             "replace": "",
             "filename": "^controllers.*\\.tex$"
+        },
+        {
+            "desc": "fix enum types not being linked",
+            "search": "(<code>(ConfirmationStatus|OrderStatus|TimeslotType|UserRole|VideoResolution)<\\/code>)",
+            "replace": "[\\1](#\\2)",
+            "filename": "^.*\\.md$"
         }
     ], 
     "lower": [
