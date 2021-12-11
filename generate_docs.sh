@@ -4,7 +4,7 @@ mkdir -p docs/latex
 mkdir -p docs/md
 
 echo "Updating submodules..."
-#git submodule update --recursive --remote
+git submodule update --recursive --remote
 
 
 # Transpile source
