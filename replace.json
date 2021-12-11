@@ -1,10 +1,32 @@
 {
-    "regex": [
+    "latex_regex": [
         {
             "desc": "Remove class overview from docs",
             "search": "\\\\hypertarget{classes}[\\s\\S]*?\\\\hypertarget",
             "replace": "\\\\hypertarget"
         },
+        {
+            "desc": "Color ROUTES in kit-green",
+            "search": "(GET|POST|DELETE|PATCH|PUT)",
+            "replace": "\\\\textcolor{kit-green}{\\1}"
+        },
+        {
+            "desc": "Remove `Kind` from Controllers",
+            "search": "\\\\textbf{Kind}[\\s\\S]*?Controller}\\\\\\\\",
+            "replace": ""
+        }
+    ], 
+    "md_regex": [
+        {
+            "desc": "Fix Model links",
+            "search": "(##\\s\\S+)(?: : <code>)([\\w\\d]+)(?:<\\/code>)",
+            "replace": "\\1\\n**Type**: \\2 \\\\"
+        }
+    ],
+    "md_lower": [
+        "\\(#\\w+\\)"
+    ],
+    "disabled": [
         {
             "search": "subsubsection",
             "replace": "paragraph"
@@ -14,19 +36,9 @@
             "replace": "subsubsection"
         },
         {
-            "desc": "Color ROUTES in kit-green",
-            "search": "(GET|POST|DELETE|PATCH|PUT)",
-            "replace": "\\\\textcolor{kit-green}{\\1}"
-        },
-        {
             "desc": "Color second column in kit-red",
             "search": "(.*?& )(.*?)( &.*)",
             "replace": "\\1\\\\textcolor{kit-red}{\\2}\\3"
-        },
-        {
-            "desc": "Remove `Kind` from Controllers",
-            "search": "\\\\textbf{Kind}[\\s\\S]*?Controller}\\\\\\\\",
-            "replace": ""
         }
     ]
 }
