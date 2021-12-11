@@ -45,6 +45,12 @@
             "search": "(?:\\*\\*See\\*\\*: ([\\w.]+))",
             "replace": "**See**: [\\1](#\\1)",
             "filename": "^.*\\.md$"
+        },
+        {
+            "desc": "Remove `static method of` from Controllers",
+            "search": "\\\\textbf{Kind}: static method of[\\s\\S]+?Controller}\\\\\\\\",
+            "replace": "",
+            "filename": "^controllers.*\\.tex$"
         }
     ], 
     "lower": [
@@ -54,12 +60,6 @@
         }
     ],
     "disabled": [
-        {
-            "desc": "Remove `Kind` from Controllers",
-            "search": "\\\\textbf{Kind}[\\s\\S]*?Controller}\\\\\\\\",
-            "replace": "",
-            "filename": "^.*\\.tex$"
-        },
         {
             "search": "subsubsection",
             "replace": "paragraph"
