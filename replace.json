@@ -24,6 +24,18 @@
             "disabled": false
         },
         {
+            "desc": "fix controller method links part 1",
+            "search": "(\\\\label{[\\w.]+controller.[\\w.]+)(?:req-res})",
+            "replace": "\\1}",
+            "filename": "^controllers.*\\.tex$"
+        },
+        {
+            "desc": "fix controller method links part 2",
+            "search": "(\\\\hypertarget{[\\w.]+controller.[\\w.]+)(?:req-res})",
+            "replace": "\\1}",
+            "filename": "^controllers.*\\.tex$"
+        },
+        {
             "desc": "Remove class overview from docs",
             "search": "\\\\hypertarget{classes}[\\s\\S]*?\\\\hypertarget",
             "replace": "\\\\hypertarget",
