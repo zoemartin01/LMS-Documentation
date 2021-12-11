@@ -77,6 +77,38 @@
             "search": "(<code>(ConfirmationStatus|OrderStatus|TimeslotType|UserRole|VideoResolution)<\\/code>)",
             "replace": "[\\1](#\\2)",
             "filename": "^.*\\.md$"
+        },
+        {
+            "desc": "multi body param part 1",
+            "search": "(((\\*{2}Bodyparam\\*{2}: )[\\s\\S]+?\\n)+)(\\3)([\\s\\S]+?) ([\\s\\S]+?) - ([\\s\\S]+?)[ ]+\\n",
+            "replace": "\\1- \\6 \\5 - \\7\\n",
+            "filename": "^.*\\.md$",
+            "recursive": true
+        },
+        {
+            "desc": "multi body param part 2",
+            "search": "(\\*{2}Bodyparam\\*{2}:) ([\\s\\S]+?) ([\\s\\S]+?) - ([\\s\\S]+?)[ ]+\\n(-[\\s\\S]+?\\n)",
+            "replace": "\\1\\n\\n- \\3 \\2 - \\4\\n\\5",
+            "filename": "^.*\\.md$"
+        },
+        {
+            "desc": "Change route/body param order",
+            "search": "(\\*\\*(?:Routeparam|Bodyparam)\\*\\*:) (<code>[\\w._-]+<\\/code>) ([\\w._-]+)",
+            "replace": "\\1 \\3 \\2",
+            "filename": "^.*\\.md$"
+        },
+        {
+            "desc": "Change bodyparam to Body Parameters",
+            "search": "\\*\\*Bodyparam\\*\\*:",
+            "replace": "**Body Parameters**:",
+            "filename": "^.*\\.md$"
+        }
+        ,
+        {
+            "desc": "Change bodyparam to Body Parameters",
+            "search": "\\*\\*Routeparam\\*\\*:",
+            "replace": "**Route Parameters**:",
+            "filename": "^.*\\.md$"
         }
     ], 
     "lower": [
