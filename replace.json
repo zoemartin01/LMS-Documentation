@@ -2,14 +2,15 @@
     "regex": [
         {
             "desc": "@see multilinks part 1",
-            "search": "(\\*\\*See\\*\\*\\s[\\s\\S]+- )(\\w+)",
+            "search": "(\\*\\*See\\*\\*\\s[\\s\\w-]+- )(\\w+)",
             "replace": "\\1[\\2](#\\2)",
             "filename": "^.*\\.md$",
-            "recursive": true
+            "recursive": true,
+            "disabled": false
         },
         {
             "desc": "@see multilinks part 2",
-            "search": "(?:\\*\\*See\\*\\*\\s([\\S\\s]+)(?:\\s- ([\\w.,\\[\\]()# ]+)))",
+            "search": "(?:\\*\\*See\\*\\*\\s([\\s\\w\\[\\]#()-]+)(?:\\s- ([\\w.,\\[\\]()# ]+)))",
             "replace": "**See** \\1, \\2",
             "filename": "^.*\\.md$",
             "recursive": true,
