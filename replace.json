@@ -1,30 +1,35 @@
 {
-    "latex_regex": [
+    "regex": [
         {
             "desc": "Remove class overview from docs",
             "search": "\\\\hypertarget{classes}[\\s\\S]*?\\\\hypertarget",
-            "replace": "\\\\hypertarget"
+            "replace": "\\\\hypertarget",
+            "filename": "^.*\\.tex$"
         },
         {
             "desc": "Color ROUTES in kit-green",
             "search": "(GET|POST|DELETE|PATCH|PUT)",
-            "replace": "\\\\textcolor{kit-green}{\\1}"
+            "replace": "\\\\textcolor{kit-green}{\\1}",
+            "filename": "^.*\\.tex$"
         },
         {
             "desc": "Remove `Kind` from Controllers",
             "search": "\\\\textbf{Kind}[\\s\\S]*?Controller}\\\\\\\\",
-            "replace": ""
-        }
-    ], 
-    "md_regex": [
+            "replace": "",
+            "filename": "^.*\\.tex$"
+        },
         {
             "desc": "Fix Model links",
             "search": "(##\\s\\S+)(?: : <code>)([\\w\\d]+)(?:<\\/code>)",
-            "replace": "\\1\\n**Type**: \\2 \\\\"
+            "replace": "\\1\\n**Type**: \\2 \\\\",
+            "filename": "^.*\\.md$"
         }
-    ],
-    "md_lower": [
-        "\\(#\\w+\\)"
+    ], 
+    "lower": [
+        {
+            "search": "\\(#\\w+\\)",
+            "filename": "^.*\\.md$"
+        }
     ],
     "disabled": [
         {

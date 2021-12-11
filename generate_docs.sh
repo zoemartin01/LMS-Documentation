@@ -25,7 +25,7 @@ jsdoc2md $options --files frontend/dist/out-tsc/app/types/**/*.js > docs/md/type
 echo "Generating LaTeX Docs..."
 cd docs/md
 for f in *.md; do
-    python3 ../../repair.py -md $f
+    python3 ../../repair.py $f
     pandoc --from=markdown --output=../latex/$f.tex $f --to=latex --standalone
-    python3 ../../repair.py -latex ../latex/$f.tex
+    python3 ../../repair.py ../latex/$f.tex
 done
