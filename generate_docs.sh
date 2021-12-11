@@ -9,8 +9,8 @@ echo "Updating submodules..."
 
 # Transpile source
 echo "Transpiling Typescript source..."
-#tsc -p backend/tsconfig.json &>/dev/null
-#tsc -p frontend/tsconfig.json &>/dev/null
+tsc -p backend/tsconfig.json &>/dev/null
+tsc -p frontend/tsconfig.json &>/dev/null
 
 echo "Generating Markdown Docs..."
 options=""

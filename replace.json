@@ -1,6 +1,28 @@
 {
     "regex": [
         {
+            "desc": "@see multilinks part 1",
+            "search": "(\\*\\*See\\*\\*\\s[\\s\\S]+- )(\\w+)",
+            "replace": "\\1[\\2](#\\2)",
+            "filename": "^.*\\.md$",
+            "recursive": true
+        },
+        {
+            "desc": "@see multilinks part 2",
+            "search": "(?:\\*\\*See\\*\\*\\s([\\S\\s]+)(?:\\s- ([\\w.,\\[\\]()# ]+)))",
+            "replace": "**See** \\1, \\2",
+            "filename": "^.*\\.md$",
+            "recursive": true,
+            "disabled": false
+        },
+        {
+            "desc": "@see multilinks part 3",
+            "search": "(?:\\*\\*See\\*\\*\\s(?:\\s- ([\\w.,\\[\\]()# ]+)))",
+            "replace": "**See**: \\1",
+            "filename": "^.*\\.md$",
+            "disabled": false
+        },
+        {
             "desc": "Remove class overview from docs",
             "search": "\\\\hypertarget{classes}[\\s\\S]*?\\\\hypertarget",
             "replace": "\\\\hypertarget",
@@ -13,25 +35,31 @@
             "filename": "^.*\\.tex$"
         },
         {
-            "desc": "Remove `Kind` from Controllers",
-            "search": "\\\\textbf{Kind}[\\s\\S]*?Controller}\\\\\\\\",
-            "replace": "",
-            "filename": "^.*\\.tex$"
-        },
-        {
             "desc": "Fix Model links",
             "search": "(##\\s\\S+)(?: : <code>)([\\w\\d]+)(?:<\\/code>)",
             "replace": "\\1\\n**Type**: \\2 \\\\",
+            "filename": "^.*\\.md$"
+        },
+        {
+            "desc": "Add @see links",
+            "search": "(?:\\*\\*See\\*\\*: ([\\w.]+))",
+            "replace": "**See**: [\\1](#\\1)",
             "filename": "^.*\\.md$"
         }
     ], 
     "lower": [
         {
-            "search": "\\(#\\w+\\)",
+            "search": "\\(#[\\w.]+\\)",
             "filename": "^.*\\.md$"
         }
     ],
     "disabled": [
+        {
+            "desc": "Remove `Kind` from Controllers",
+            "search": "\\\\textbf{Kind}[\\s\\S]*?Controller}\\\\\\\\",
+            "replace": "",
+            "filename": "^.*\\.tex$"
+        },
         {
             "search": "subsubsection",
             "replace": "paragraph"
