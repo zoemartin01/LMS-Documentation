@@ -68,7 +68,7 @@
         },
         {
             "desc": "Remove `static method of` from Controllers",
-            "search": "\\\\textbf{Kind}: static method of[\\s\\S]+?Controller}\\\\\\\\",
+            "search": "\\\\textbf{Kind}: static method of[\\s\\S]+?Controller}}\\\\\\\\",
             "replace": "",
             "filename": "^controllers.*\\.tex$"
         },
@@ -108,6 +108,24 @@
             "search": "\\*\\*Routeparam\\*\\*:",
             "replace": "**Route Parameters**:",
             "filename": "^.*\\.md$"
+        },
+        {
+            "desc": "emph code",
+            "search": "<code>(.*?)<\\/code>",
+            "replace": "\\\\emph{\\1}",
+            "filename": "^.*\\.md$"
+        },
+        {
+            "desc": "<",
+            "search": "&lt;",
+            "replace": "{<}",
+            "filename": "^.*\\.tex$"
+        },
+        {
+            "desc": ">",
+            "search": "&gt;",
+            "replace": "{>}",
+            "filename": "^.*\\.tex$"
         }
     ], 
     "lower": [
