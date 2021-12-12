@@ -1,8 +1,8 @@
 import sys
-import re
+import regex as re
 import json
 
-pattern = re.compile(r'(?:begin{document})([\s\S]*)(?:\\end{document})')
+pattern = re.compile(r'(?:begin\{document\})([\s\S]*)(?:\\end\{document\})')
 
 j = open('../../replace.json')
 json_data = json.load(j)
