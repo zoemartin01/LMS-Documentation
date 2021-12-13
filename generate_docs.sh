@@ -1,5 +1,8 @@
 #!/bin/bash
 
+rm -rf backend/dist
+rm -rf frontend/dist
+
 mkdir -p docs/latex
 mkdir -p docs/md
 
