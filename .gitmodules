@@ -7,3 +7,6 @@
 [submodule "overleaf"]
 	path = overleaf
 	url = https://git.overleaf.com/61a397247e8cf845507eeb12
+[submodule "livecam"]
+	path = livecam
+	url = git@git.scc.kit.edu:realpsege/pse-livecam.git
