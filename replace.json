@@ -1,6 +1,24 @@
 {
     "regex": [
         {
+            "desc": "remove links from views",
+            "search": "\\[(.*)\\]\\(.*\\)",
+            "replace": "\\1",
+            "filename": "^view\\.frontend\\..*\\.md$"
+        },
+        {
+            "desc": "remove links from services",
+            "search": "\\[(.*)\\]\\(.*\\)",
+            "replace": "\\1",
+            "filename": "^services\\.frontend\\.md$"
+        },
+        {
+            "desc": "remove links from services",
+            "search": "\\[(.*)\\]\\(.*\\)",
+            "replace": "\\1",
+            "filename": "^livecam\\.md$"
+        },
+        {
             "desc": "@see multilinks part 1",
             "search": "(\\*\\*See\\*\\*\\s[\\s\\w-]+- )(\\w+)",
             "replace": "\\1[\\2](#\\2)",
@@ -34,6 +52,24 @@
             "search": "(\\\\hypertarget{[\\w.]+controller.[\\w.]+)(?:req-res})",
             "replace": "\\1}",
             "filename": "^controllers.*\\.tex$"
+        },
+        {
+            "desc": "fix services method links part 1",
+            "search": "\\(#(\\w+Service)\\+(\\w+)\\)",
+            "replace": "(#\\1.\\2)",
+            "filename": "^services.*\\.md$"
+        },
+        {
+            "desc": "fix services method links part 2",
+            "search": "(\\\\label{[\\w.]+service.[\\w.]+)(?:.*?})",
+            "replace": "\\1}",
+            "filename": "^services.*\\.tex$"
+        },
+        {
+            "desc": "fix services method links part 3",
+            "search": "(\\\\hypertarget{[\\w.]+service.[\\w.]+)(?:.*?})",
+            "replace": "\\1}",
+            "filename": "^services.*\\.tex$"
         },
         {
             "desc": "replace global class with controller class in controllers",
@@ -70,11 +106,13 @@
             "desc": "Remove `static method of` from Controllers",
             "search": "\\\\textbf{Kind}: static method of[\\s\\S]+?Controller}}\\\\\\\\",
             "replace": "",
-            "filename": "^controllers.*\\.tex$"
+            "filename": "^controllers.*\\.tex$",
+            "disabled": true,
+            "broken": true
         },
         {
             "desc": "fix enum types not being linked",
-            "search": "(<code>(ConfirmationStatus|OrderStatus|TimeslotType|UserRole|VideoResolution)<\\/code>)",
+            "search": "(<code>(ConfirmationStatus|OrderStatus|TimeslotType|NotificationChannel|TokenType|UserRole|VideoResolution)<\\/code>)",
             "replace": "[\\1](#\\2)",
             "filename": "^.*\\.md$"
         },
@@ -91,22 +129,77 @@
             "filename": "^.*\\.md$"
         },
         {
+            "desc": "multi route param part 1",
+            "search": "(?<=\\*{2}Routeparam\\*{2}.*\\n)\\*{2}Routeparam\\*{2}: (.*) (.*?) - (.*)  ",
+            "replace": "- \\2 \\1 - \\3",
+            "filename": "^.*\\.md$"
+        },
+        {
+            "desc": "multi route param part 2",
+            "search": "(?<=\\*{2}Routeparam\\*{2}: )(.*) (.*?) - (.*?)[ ]*\\n",
+            "replace": "\\n\\n- \\2 \\1 - \\3\\n",
+            "filename": "^.*\\.md$"
+        },
+        {
+            "desc": "multi enumerators part 1",
+            "search": "(?<=\\*{2}Enumerators\\*{2}.*\\n)\\*{2}Enumerators\\*{2}: (.*) (.*?)  ",
+            "replace": "- \\1 \\2",
+            "filename": "^.*\\.md$"
+        },
+        {
+            "desc": "multi enumerators part 2",
+            "search": "(?<=\\*{2}Enumerators\\*{2}: )(.*) (.*?)  \\n",
+            "replace": "\\n\\n- \\1 \\2\\n",
+            "filename": "^.*\\.md$"
+        },
+        {
             "desc": "Change route/body param order",
             "search": "(\\*\\*(?:Routeparam|Bodyparam)\\*\\*:) (<code>[\\w._-]+<\\/code>) ([\\w._-]+)",
             "replace": "\\1 \\3 \\2",
             "filename": "^.*\\.md$"
         },
         {
+            "desc": "fix body param in route param list. i dont know why this is even needed aaaaah",
+            "search": "(.+)\\\\textbf{Body\\s+Parameters}:",
+            "replace": "\\1\\n\\\\end{itemize}\\n\\n\\\\textbf{Body Parameters}:\\n\\\\begin{itemize}",
+            "filename": "^.*\\.tex$"
+        },
+        {
             "desc": "Change bodyparam to Body Parameters",
             "search": "\\*\\*Bodyparam\\*\\*:",
             "replace": "**Body Parameters**:",
             "filename": "^.*\\.md$"
-        }
-        ,
+        },
+        {
+            "desc": "Change paragraph font size",
+            "search": "\\\\paragraph{([\\s\\S]+)}",
+            "replace": "\\\\paragraph{{\\\\large{\\1}}}",
+            "filename": "^.*\\.tex$",
+            "disabled": true,
+            "broken": true
+        },
         {
             "desc": "Change bodyparam to Body Parameters",
             "search": "\\*\\*Routeparam\\*\\*:",
             "replace": "**Route Parameters**:",
+            "filename": "^.*\\.md$"
+        },
+        {
+            "desc": "multilist body param breaks params",
+            "search": "(-.*-.*\\n)(\\*{2}Params\\*{2})",
+            "replace": "\\1\\n\\2",
+            "filename": "^.*\\.md$"
+        },
+        {
+            "desc": "params with :",
+            "search": "(\\*{2}Params\\*{2})",
+            "replace": "\\1:",
+            "filename": "^.*\\.md$"
+        },
+        {
+            "desc": "Change params to Parameters",
+            "search": "\\*\\*Params\\*\\*:",
+            "replace": "**Parameters**:",
             "filename": "^.*\\.md$"
         },
         {
