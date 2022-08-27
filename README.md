@@ -1,5 +1,8 @@
-# Important
+# Laboratory Management System Documentation
+This project was hacked together to automatically generate documentation for the laboratory management system.
+It generates LaTeX code from JSDoc Tags which is then automatically pushed to an Overleaf project.
 
-This repo has to be cloned recursively:
-
-`$ git clone git@git.scc.kit.edu:realpsege/pse-documentation.git --recursive`
+## Project Repositories
+- [`Frontend`](https://github.com/zoemartin01/LMS-Frontend)
+- [`Backend`](https://github.com/zoemartin01/LMS-Backend)
+- [`Camera`](https://github.com/zoemartin01/LMS-Camera)

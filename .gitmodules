@@ -1,12 +1,12 @@
 [submodule "backend"]
 	path = backend
-	url = git@git.scc.kit.edu:realpsege/pse-backend.git
+	url = git@github.com:zoemartin01/LMS-Backend.git
 [submodule "frontend"]
 	path = frontend
-	url = git@git.scc.kit.edu:realpsege/pse-frontend.git
+	url = git@github.com:zoemartin01/LMS-Frontend.git
 [submodule "overleaf"]
 	path = overleaf
 	url = https://git.overleaf.com/61a397247e8cf845507eeb12
 [submodule "livecam"]
 	path = livecam
-	url = git@git.scc.kit.edu:realpsege/pse-livecam.git
+	url = git@github.com:zoemartin01/LMS-Camera.git
